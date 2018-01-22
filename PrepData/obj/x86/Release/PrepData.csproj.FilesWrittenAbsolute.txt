@@ -1,0 +1,5 @@
+/home/me/Code/DeepER/treelstm-origin-gpu-dler/PrepData/obj/x86/Release/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/me/Code/DeepER/treelstm-origin-gpu-dler/PrepData/bin/Release/PrepData.exe.mdb
+/home/me/Code/DeepER/treelstm-origin-gpu-dler/PrepData/bin/Release/PrepData.exe
+/home/me/Code/DeepER/treelstm-origin-gpu-dler/PrepData/obj/x86/Release/PrepData.exe
+/home/me/Code/DeepER/treelstm-origin-gpu-dler/PrepData/obj/x86/Release/PrepData.exe.mdb

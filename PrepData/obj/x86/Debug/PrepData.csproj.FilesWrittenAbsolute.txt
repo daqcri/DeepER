@@ -1,0 +1,5 @@
+/home/me/Documents/Code/torch/treelstm/origin/treelstm-origin-gpu-dler/PrepData/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/me/Documents/Code/torch/treelstm/origin/treelstm-origin-gpu-dler/PrepData/bin/Debug/PrepData.exe.mdb
+/home/me/Documents/Code/torch/treelstm/origin/treelstm-origin-gpu-dler/PrepData/bin/Debug/PrepData.exe
+/home/me/Documents/Code/torch/treelstm/origin/treelstm-origin-gpu-dler/PrepData/obj/x86/Debug/PrepData.exe
+/home/me/Documents/Code/torch/treelstm/origin/treelstm-origin-gpu-dler/PrepData/obj/x86/Debug/PrepData.exe.mdb
