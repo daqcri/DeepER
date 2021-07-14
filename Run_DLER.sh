@@ -31,9 +31,9 @@ DATASET_DLER=$DATA_DIR/dler/$DATASET                 #same as SPLIT_DATA_SET_DIR
 
 #SIMPLE CONTROL SAMPLING
 SEED=31
-TRAIN_RATIO=0.25
-DEV_RATIO=0.25
-TEST_RAIO=0.5
+TRAIN_RATIO=0,25
+DEV_RATIO=0,25
+TEST_RAIO=0,5
 NEG_TO_POS_RATIO=1
 
 #FULL CONTROL SAMPLING
@@ -41,7 +41,7 @@ RATIO_NEG_TO_POS_TYPE_1=6    						#e.g. 2 neg examples for each pos example whe
 RATIO_NEG_TO_POS_TYPE_2=6							#e.g. 2 neg examples for each pos example where the table two record of a random pos is part of the tuple
 RATIO_NEG_TO_POS_TYPE_3=6							#e.g. 2 neg examples for each pos example where both records are not part of any pos example
 
-RATIO_OF_NEG_TO_INCLUDE_IN_TRAINING=0.025 			#off all samples negative examples for training, what ratio do you want to keep (class balancing)
+RATIO_OF_NEG_TO_INCLUDE_IN_TRAINING=0,025 			#off all samples negative examples for training, what ratio do you want to keep (class balancing)
 
 COLUMNS_TO_INCLUDE_FROM_FIRST="1,2,3" 							#only include these columns as part of the record, column 0 is assumed to be the id
 COLUMNS_TO_INCLUDE_FROM_SECOND="1,2,4" 							#only include these columns as part of the record, column 0 is assumed to be the id
@@ -79,19 +79,19 @@ then
 	if [ "$FULL_CONTROL" = "yes" ]
 	then
 		echo 'full control sampling & preparing the data for parsing ..'
-		$PWD/PrepData/./PrepMagellan.exe $DATASET_DIR/$DATASET"_perfectMapping.csv" "$DATASET_DIR/$FIRST_TABLE.csv" "$DATASET_DIR/$SECOND_TABLE.csv" \
-										 "$SPLIT_DATASET_DIR/train.csv" "$SPLIT_DATASET_DIR/dev.csv" "/$SPLIT_DATASET_DIR/test.csv" \
-										 "$DATASET_DLER/train.txt" "$DATASET_DLER/dev.txt" "$DATASET_DLER/test.txt" \
-										 $TRAIN_RATIO $DEV_RATIO $TEST_RAIO \
-										 $RATIO_NEG_TO_POS_TYPE_1 $RATIO_NEG_TO_POS_TYPE_2 $RATIO_NEG_TO_POS_TYPE_3 \
-										 $RATIO_OF_NEG_TO_INCLUDE_IN_TRAINING \
-										 $SEED $COLUMNS_TO_INCLUDE_FROM_FIRST $COLUMNS_TO_INCLUDE_FROM_SECOND
+		mono $PWD/PrepData/./PrepMagellan.exe $DATASET_DIR/$DATASET"_perfectMapping.csv" "$DATASET_DIR/$FIRST_TABLE.csv" "$DATASET_DIR/$SECOND_TABLE.csv" \
+										"$SPLIT_DATASET_DIR/train.csv" "$SPLIT_DATASET_DIR/dev.csv" "/$SPLIT_DATASET_DIR/test.csv" \
+										"$DATASET_DLER/train.txt" "$DATASET_DLER/dev.txt" "$DATASET_DLER/test.txt" \
+										$TRAIN_RATIO $DEV_RATIO $TEST_RAIO \
+										$RATIO_NEG_TO_POS_TYPE_1 $RATIO_NEG_TO_POS_TYPE_2 $RATIO_NEG_TO_POS_TYPE_3 \
+										$RATIO_OF_NEG_TO_INCLUDE_IN_TRAINING \
+										$SEED $COLUMNS_TO_INCLUDE_FROM_FIRST $COLUMNS_TO_INCLUDE_FROM_SECOND
 	    echo " "
 	else
-		echo 'simle sampling & preparing the data for parsing ..'								 
-		$PWD/PrepData/./PrepData.exe $DATASET_DIR/$DATASET"_perfectMapping.csv" "$DATASET_DIR/$FIRST_TABLE.csv" "$DATASET_DIR/$SECOND_TABLE.csv" \
-										 "$DATASET_DLER/train.txt" "$DATASET_DLER/dev.txt" "$DATASET_DLER/test.txt" \
-										 $TRAIN_RATIO $DEV_RATIO $TEST_RAIO $NEG_TO_POS_RATIO $SEED
+		echo 'simle sampling & preparing the data for parsing ..'
+		mono $PWD/PrepData/./PrepData.exe $DATASET_DIR/$DATASET"_perfectMapping.csv" "$DATASET_DIR/$FIRST_TABLE.csv" "$DATASET_DIR/$SECOND_TABLE.csv" \
+										"$DATASET_DLER/train.txt" "$DATASET_DLER/dev.txt" "$DATASET_DLER/test.txt" \
+										$TRAIN_RATIO $DEV_RATIO $TEST_RAIO $NEG_TO_POS_RATIO $SEED
 		echo " "
 	fi
 else

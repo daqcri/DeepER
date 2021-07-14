@@ -45,7 +45,7 @@ local fine_grained = not args.binary
 local data_dir = 'data/sst/'
 
 -- load vocab
-local vocab = treelstm.Vocab(data_dir .. 'vocab-cased.txt')
+local vocab = treelstm.Vocab(data_dir .. 'vocab-cased.txt') ---dictionary.txt
 
 -- load embeddings
 print('loading word embeddings')
